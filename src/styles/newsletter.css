@@ -1,0 +1,85 @@
+/* Email-safe newsletter styles matching website */
+
+/* Container */
+.newsletter-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Headers */
+.newsletter-h1 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.newsletter-h2 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+/* Body text */
+.newsletter-text {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4B5563;
+  margin-bottom: 16px;
+}
+
+/* Links */
+.newsletter-link {
+  color: #0284C7;
+  text-decoration: underline;
+}
+
+/* Buttons */
+.newsletter-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #0284C7;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Sections */
+.newsletter-section {
+  margin-bottom: 32px;
+  padding: 24px;
+  background-color: #F9FAFB;
+  border-radius: 8px;
+}
+
+/* Lists */
+.newsletter-list {
+  margin: 16px 0;
+  padding-left: 24px;
+}
+
+.newsletter-list-item {
+  color: #4B5563;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+.newsletter-footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+  font-size: 14px;
+  color: #6B7280;
+  text-align: center;
+}

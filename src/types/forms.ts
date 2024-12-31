@@ -39,6 +39,6 @@ export interface FormData {
   companySize: string;
   jobTitles: string[];
 
-  //Index signature that allows to index by string signatures
+  // Index signature that allows to index by string signatures
   [key: string]: string | string[] | number | undefined;
 }

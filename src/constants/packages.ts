@@ -28,7 +28,7 @@ export const packages = [
   {
     name: "To-The-Moon Package",
     description: "A fully orchestrated, AI-driven experience for established businesses requiring deep customization.",
-    price: 'custom',
+    price: "custom",
     features: [
       "Enterprise Tech Stack",
       "Omni-Channel Outreach",

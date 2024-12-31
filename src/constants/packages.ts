@@ -1,4 +1,7 @@
-export const packages = [
+import {Package} from "../types/packages.ts";
+
+/* Explicitly typing the 'packages' array to conform to the 'Package' type */
+export const packages: Package[] = [
   {
     name: "Basic Package",
     description: "Perfect for early-stage businesses or teams new to CRM adoption.",

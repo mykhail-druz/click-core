@@ -1,6 +1,6 @@
 export interface Package {
   name: string;
   description: string;
-  price: "custom" | number;
+  price: number | "custom";
   features: string[];
 }

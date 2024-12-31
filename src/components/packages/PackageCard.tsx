@@ -1,6 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Package } from '../../types/packages';
+import {motion} from 'framer-motion';
+import {Package} from '../../types/packages';
 
 interface PackageCardProps {
   package: Package;

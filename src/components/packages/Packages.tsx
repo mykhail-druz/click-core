@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import {motion} from 'framer-motion';
+import {useInView} from 'react-intersection-observer';
 import PackageCard from './PackageCard';
-import { packages } from '../../constants/packages';
+import {packages} from '../../constants/packages';
 
 export default function Packages() {
   const [ref, inView] = useInView({

@@ -1,14 +1,30 @@
-import React, { useState } from 'react';
-import { useForm, FormProvider } from 'react-hook-form';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, {useState} from 'react';
+import {FormProvider, useForm} from 'react-hook-form';
+import {AnimatePresence, motion} from 'framer-motion';
 import CustomerProfileStep from './CustomerProfileStep';
 import ContactDetailsStep from './ContactDetailsStep';
-import { FormData } from '../../types/forms';
+import {FormData} from '../../types/forms';
 
 export default function TwoStepForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const methods = useForm<FormData>();
-  
+
+  /* The function converts the form data into a string format for sending to the server
+  * If the field value is an array, it is concatenated into a comma-separated string
+  * If the field value is a string or a number, it is added as is
+  */
+  const formDataToString = (data: FormData) => {
+    const formattedData: Record<string, string> = {};
+    Object.keys(data).forEach((key: string) => {
+      if (Array.isArray(data[key])) {
+        formattedData[key] = data[key].join(', ');
+      } else {
+        formattedData[key] = data[key] as string;
+      }
+    });
+  return formattedData
+  }
+
   const onSubmit = async (data: FormData) => {
     try {
       if (window.gtag) {
@@ -21,11 +37,7 @@ export default function TwoStepForm() {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'lead-form',
-          ...data,
-          addons: data.addons?.join(', ') || ''
-        }).toString()
+        body: new URLSearchParams(formDataToString(data)).toString()
       });
 
       if (response.ok) {

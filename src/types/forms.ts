@@ -3,10 +3,11 @@ export interface FormStep {
   title: string;
   description?: string;
   component: React.ComponentType<{
-    data: any;
-    updateData: (data: any) => void;
+    data: FormData;
+    updateData: (data: FormData) => void;
   }>;
 }
+
 
 export interface FormData {
   // Contact Details
@@ -14,6 +15,7 @@ export interface FormData {
   email: string;
   phone?: string;
   businessName: string;
+  package: string
   
   // Sales Process
   currentProcess?: string;
@@ -29,4 +31,14 @@ export interface FormData {
   successMetrics?: string;
   timeline?: string;
   additionalNotes?: string;
+
+  // Two-step form
+  addons?: string[]
+  industry?: string;
+  location?: string;
+  companySize: string;
+  jobTitles: string[];
+
+  //Index signature that allows to index by string signatures
+  [key: string]: string | string[] | number | undefined;
 }

@@ -40,7 +40,6 @@ export default function CustomPackageForm() {
             initialData={customFormData}
             // onSubmit={handleSubmit}
             formName="custom-package"
-            formAction="/forms/custom"
           />
         </div>
       </div>

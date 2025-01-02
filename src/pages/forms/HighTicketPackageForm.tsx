@@ -40,7 +40,6 @@ export default function HighTicketPackageForm() {
             initialData={highTicketFormData}
             // onSubmit={handleSubmit}
             formName="high-ticket-package"
-            formAction="/forms/high-ticket"
           />
         </div>
       </div>

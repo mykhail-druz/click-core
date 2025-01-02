@@ -40,7 +40,6 @@ export default function BasicPackageForm() {
             initialData={basicFormData}
             // onSubmit={handleSubmit}
             formName="basic-package"
-            formAction="/forms/basic"
           />
         </div>
       </div>

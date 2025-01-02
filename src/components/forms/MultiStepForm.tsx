@@ -16,10 +16,9 @@ interface MultiStepFormProps {
   initialData: any;
   // onSubmit: (data: any) => Promise<void>;
   formName: string;
-  formAction: string;
 }
 
-export default function MultiStepForm({ steps, initialData, formName, formAction, }: MultiStepFormProps) {
+export default function MultiStepForm({ steps, initialData, formName,  }: MultiStepFormProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState(initialData);
   const navigate = useNavigate();
@@ -81,7 +80,7 @@ export default function MultiStepForm({ steps, initialData, formName, formAction
       <form
           name={formName}
           method="POST"
-          action={formAction}
+          action="/"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           className="space-y-8"
@@ -91,7 +90,7 @@ export default function MultiStepForm({ steps, initialData, formName, formAction
 
         {/* Hidden inputs for all form fields */}
         {Object.entries(formData).map(([key, value]) => (
-            <input key={key} type="hidden" name={key} value={value?.toString() || ''}/>
+            <input key={key} type="hidden" name={key} value={value?.toString() || ''} />
         ))}
 
         {/* Progress indicator */}

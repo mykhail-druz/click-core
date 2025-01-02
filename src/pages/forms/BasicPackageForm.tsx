@@ -1,12 +1,12 @@
 import React from 'react';
 import MultiStepForm from '../../components/forms/MultiStepForm';
-import { basicFormSteps } from '../../constants/formSteps';
-import { basicFormData } from '../../constants/formData';
+import {basicFormSteps} from '../../constants/formSteps';
+import {basicFormData} from '../../constants/formData';
 
 export default function BasicPackageForm() {
   const handleSubmit = async (data: any) => {
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/forms/basic', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -40,6 +40,7 @@ export default function BasicPackageForm() {
             initialData={basicFormData}
             onSubmit={handleSubmit}
             formName="basic-package"
+            formAction="/forms/basic"
           />
         </div>
       </div>

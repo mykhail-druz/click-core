@@ -1,12 +1,12 @@
 import React from 'react';
 import MultiStepForm from '../../components/forms/MultiStepForm';
-import { highTicketFormSteps } from '../../constants/formSteps';
-import { highTicketFormData } from '../../constants/formData';
+import {highTicketFormSteps} from '../../constants/formSteps';
+import {highTicketFormData} from '../../constants/formData';
 
 export default function HighTicketPackageForm() {
   const handleSubmit = async (data: any) => {
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/forms/high-ticket', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -40,6 +40,7 @@ export default function HighTicketPackageForm() {
             initialData={highTicketFormData}
             onSubmit={handleSubmit}
             formName="high-ticket-package"
+            formAction="/forms/high-ticket"
           />
         </div>
       </div>

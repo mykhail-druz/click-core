@@ -3,22 +3,22 @@
   command = "npm run build"
 
 [[redirects]]
-  from = "/forms/*"
-  to = "/"
+  from = "/*"
+  to = "/index.html"
   status = 200
   force = true
 
-[[plugins]]
-  package = "@netlify/plugin-functions-install-core"
-
 [[forms]]
   name = "basic-package"
-  path = "/"
+  path = "/forms/basic"
 
 [[forms]]
   name = "custom-package"
-  path = "/"
+  path = "/forms/custom"
 
 [[forms]]
   name = "high-ticket-package"
-  path = "/"
+  path = "/forms/high-ticket"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"

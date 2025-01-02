@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
+import {useNavigate} from 'react-router-dom';
 
 interface FormStep {
   id: string;
@@ -49,11 +49,13 @@ export default function MultiStepForm({ steps, initialData, onSubmit, formName }
       if (Array.isArray(value)) {
         return { ...acc, [key]: value.join(', ') };
       }
-      return { ...acc, [key]: value };
+      return { ...acc, [key]: String(value) };
     }, {});
+    console.log('Encoded data:', encodedData);
+
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('https://clickcore.netlify.app/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({

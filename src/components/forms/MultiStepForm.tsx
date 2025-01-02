@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
+import {useNavigate} from 'react-router-dom';
 
 interface FormStep {
   id: string;
@@ -49,7 +49,7 @@ export default function MultiStepForm({ steps, initialData, onSubmit, formName }
       if (Array.isArray(value)) {
         return { ...acc, [key]: value.join(', ') };
       }
-      return { ...acc, [key]: value };
+      return { ...acc, [key]: String(value) };
     }, {});
 
     try {

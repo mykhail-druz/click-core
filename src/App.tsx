@@ -18,7 +18,6 @@ function App() {
           <Route path="/forms/high-ticket" element={<HighTicketPackageForm />} />
           <Route path="/forms/custom" element={<CustomPackageForm />} />
         </Routes>
-        <BasicPackageForm />
         <Footer />
       </div>
     </BrowserRouter>

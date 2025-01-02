@@ -38,8 +38,9 @@ export default function CustomPackageForm() {
           <MultiStepForm
             steps={customFormSteps}
             initialData={customFormData}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             formName="custom-package"
+            formAction="/forms/custom"
           />
         </div>
       </div>

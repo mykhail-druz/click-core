@@ -51,11 +51,9 @@ export default function MultiStepForm({ steps, initialData, onSubmit, formName }
       }
       return { ...acc, [key]: String(value) };
     }, {});
-    console.log('Encoded data:', encodedData);
-
 
     try {
-      const response = await fetch('https://clickcore.netlify.app/', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({

@@ -16,9 +16,10 @@ interface MultiStepFormProps {
   initialData: any;
   onSubmit: (data: any) => Promise<void>;
   formName: string;
+  formAction: string;
 }
 
-export default function MultiStepForm({ steps, initialData, onSubmit, formName }: MultiStepFormProps) {
+export default function MultiStepForm({ steps, initialData, onSubmit, formName, formAction  }: MultiStepFormProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState(initialData);
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ export default function MultiStepForm({ steps, initialData, onSubmit, formName }
     }, {});
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch(formAction, {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({

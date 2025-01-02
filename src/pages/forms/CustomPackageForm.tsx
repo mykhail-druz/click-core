@@ -1,12 +1,12 @@
 import React from 'react';
 import MultiStepForm from '../../components/forms/MultiStepForm';
-import { customFormSteps } from '../../constants/formSteps';
-import { customFormData } from '../../constants/formData';
+import {customFormSteps} from '../../constants/formSteps';
+import {customFormData} from '../../constants/formData';
 
 export default function CustomPackageForm() {
   const handleSubmit = async (data: any) => {
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/forms/custom', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
@@ -40,6 +40,7 @@ export default function CustomPackageForm() {
             initialData={customFormData}
             onSubmit={handleSubmit}
             formName="custom-package"
+            formAction="/forms/custom"
           />
         </div>
       </div>

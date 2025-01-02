@@ -38,8 +38,9 @@ export default function BasicPackageForm() {
           <MultiStepForm
             steps={basicFormSteps}
             initialData={basicFormData}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             formName="basic-package"
+            formAction="/forms/basic"
           />
         </div>
       </div>

@@ -38,8 +38,9 @@ export default function HighTicketPackageForm() {
           <MultiStepForm
             steps={highTicketFormSteps}
             initialData={highTicketFormData}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             formName="high-ticket-package"
+            formAction="/forms/high-ticket"
           />
         </div>
       </div>

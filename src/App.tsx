@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Landing from './pages/Landing';
@@ -18,6 +18,7 @@ function App() {
           <Route path="/forms/high-ticket" element={<HighTicketPackageForm />} />
           <Route path="/forms/custom" element={<CustomPackageForm />} />
         </Routes>
+        <BasicPackageForm /> // FOR TEST!!
         <Footer />
       </div>
     </BrowserRouter>

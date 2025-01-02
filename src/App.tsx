@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Landing from './pages/Landing';
@@ -9,18 +9,18 @@ import CustomPackageForm from './pages/forms/CustomPackageForm';
 
 function App() {
   return (
-      <HashRouter>
-        <div className="min-h-screen bg-white">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/forms/basic" element={<BasicPackageForm />} />
-            <Route path="/forms/high-ticket" element={<HighTicketPackageForm />} />
-            <Route path="/forms/custom" element={<CustomPackageForm />} />
-          </Routes>
-          <Footer />
-        </div>
-      </HashRouter>
+    <BrowserRouter>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/forms/basic" element={<BasicPackageForm />} />
+          <Route path="/forms/high-ticket" element={<HighTicketPackageForm />} />
+          <Route path="/forms/custom" element={<CustomPackageForm />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

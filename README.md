@@ -28,15 +28,31 @@ Welcome to the **ClickCore Landing Page** repository! This project is designed t
 ## 📂 Project Structure
 
 ```plaintext
-src/
-├── components/         # Reusable components
-│   ├── forms/          # Multi-step forms and steps
-│   ├── FormField.tsx   # Custom form field component
-├── constants/          # Static data like form steps
-├── styles/             # TailwindCSS configuration
-├── App.tsx             # Main application file
-├── main.tsx            # Application entry point
-public/                 # Static assets and Netlify redirects
+click-core/
+├── public/                 # Public assets
+│   ├── images/             # Static images
+│   ├── _static_forms.html  # Example static forms
+│   ├── logo.svg            # Logo asset
+├── src/                    # Source code
+│   ├── components/         # Reusable components
+│   ├── constants/          # Static data like form steps
+│   ├── pages/              # Main pages of the app
+│   ├── styles/             # TailwindCSS configuration
+│   ├── types/              # Type definitions
+│   ├── utils/              # Utility functions
+│   ├── App.tsx             # Main application file
+│   ├── main.tsx            # Application entry point
+│   ├── index.css           # Global styles
+├── .gitignore              # Ignored files for Git
+├── .prettierrc             # Prettier configuration
+├── .prettierignore         # Files ignored by Prettier
+├── _redirects              # Netlify redirects file (SPA routing)
+├── index.html              # Main HTML file
+├── netlify.toml            # Netlify configuration
+├── package.json            # NPM dependencies and scripts
+├── tailwind.config.js      # TailwindCSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── vite.config.ts          # Vite configuration
 ```
 
 ---
@@ -45,7 +61,7 @@ public/                 # Static assets and Netlify redirects
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/mykhaol-druz/click-core.git
+   git clone https://github.com/mykhail-druz/click-core.git
    cd click-core
    ```
 
@@ -72,7 +88,7 @@ This project is optimized for deployment on **Netlify**. To deploy:
 
 1. Push the repository to GitHub.
 2. Connect the repository to your Netlify account.
-3. Ensure the `_redirects` file is in the `public` folder for SPA routing.
+3. Ensure the `_redirects` file is in the **root directory** for SPA routing.
 
 ---
 
@@ -107,4 +123,3 @@ If you have any questions or feedback, feel free to reach out:
 ---
 
 Thank you for checking out ClickCore Landing Page! 🎉
-

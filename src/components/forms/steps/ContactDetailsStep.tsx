@@ -6,15 +6,24 @@ interface ContactDetailsStepProps {
   updateData: (data: any) => void;
 }
 
-export default function ContactDetailsStep({ data, updateData }: ContactDetailsStepProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+export default function ContactDetailsStep({
+  data,
+  updateData,
+}: ContactDetailsStepProps) {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     updateData({ [e.target.name]: e.target.value });
   };
 
   return (
     <div className="space-y-6">
-      <h3 className="text-lg font-semibold text-gray-900">Tell Us About You & Your Business</h3>
-      
+      <h3 className="text-lg font-semibold text-gray-900">
+        Tell Us About You & Your Business
+      </h3>
+
       <FormField
         label="Name"
         name="name"

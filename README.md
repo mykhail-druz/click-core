@@ -45,8 +45,8 @@ public/                 # Static assets and Netlify redirects
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/clickcore-landing-page.git
-   cd clickcore-landing-page
+   git clone https://github.com/mykhaol-druz/click-core.git
+   cd click-core
    ```
 
 2. **Install Dependencies**:
@@ -103,12 +103,6 @@ If you have any questions or feedback, feel free to reach out:
 
 - **Email**: support@clickcore.com
 - **GitHub Issues**: Open an issue in this repository.
-
----
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 

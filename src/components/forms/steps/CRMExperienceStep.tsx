@@ -6,8 +6,15 @@ interface CRMExperienceStepProps {
   updateData: (data: any) => void;
 }
 
-export default function CRMExperienceStep({ data, updateData }: CRMExperienceStepProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+export default function CRMExperienceStep({
+  data,
+  updateData,
+}: CRMExperienceStepProps) {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     updateData({ [e.target.name]: e.target.value });
   };
 
@@ -23,7 +30,7 @@ export default function CRMExperienceStep({ data, updateData }: CRMExperienceSte
         options={[
           { value: '', label: 'Select your experience' },
           { value: 'yes', label: 'Yes' },
-          { value: 'no', label: 'No' }
+          { value: 'no', label: 'No' },
         ]}
       />
 

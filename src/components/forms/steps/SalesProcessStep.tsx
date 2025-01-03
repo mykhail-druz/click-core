@@ -6,8 +6,15 @@ interface SalesProcessStepProps {
   updateData: (data: any) => void;
 }
 
-export default function SalesProcessStep({ data, updateData }: SalesProcessStepProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+export default function SalesProcessStep({
+  data,
+  updateData,
+}: SalesProcessStepProps) {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     updateData({ [e.target.name]: e.target.value });
   };
 
@@ -32,10 +39,16 @@ export default function SalesProcessStep({ data, updateData }: SalesProcessStepP
         options={[
           { value: '', label: 'Select your biggest frustration' },
           { value: 'losing_leads', label: 'We lose track of leads easily' },
-          { value: 'inconsistent_followup', label: 'Follow-up is inconsistent' },
+          {
+            value: 'inconsistent_followup',
+            label: 'Follow-up is inconsistent',
+          },
           { value: 'no_crm', label: "We don't have a CRM at all" },
-          { value: 'messy_process', label: 'Everything feels messy and time-consuming' },
-          { value: 'other', label: 'Other' }
+          {
+            value: 'messy_process',
+            label: 'Everything feels messy and time-consuming',
+          },
+          { value: 'other', label: 'Other' },
         ]}
       />
 
@@ -59,8 +72,8 @@ export default function SalesProcessStep({ data, updateData }: SalesProcessStepP
           { value: '', label: 'Select urgency level' },
           ...Array.from({ length: 10 }, (_, i) => ({
             value: String(i + 1),
-            label: `${i + 1} - ${i === 0 ? 'Not urgent' : i === 9 ? 'Extremely urgent' : ''}`
-          }))
+            label: `${i + 1} - ${i === 0 ? 'Not urgent' : i === 9 ? 'Extremely urgent' : ''}`,
+          })),
         ]}
       />
     </div>

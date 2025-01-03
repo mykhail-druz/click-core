@@ -8,19 +8,20 @@
   <input name="phone" placeholder="Phone Number" type="tel" />
 
   <!-- Sales Process -->
-  <textarea name="currentProcess" placeholder="Describe your current sales process"></textarea>
+  <textarea name="currentProcess" placeholder="Describe your current sales process" required></textarea>
   <select name="biggestFrustration" required>
     <option value="">Select your biggest frustration</option>
     <option value="losing_leads">Losing leads</option>
     <option value="inconsistent_followup">Inconsistent follow-up</option>
     <option value="no_crm">No CRM at all</option>
     <option value="messy_process">Messy process</option>
+    <option value="other">Other</option>
   </select>
-  <textarea name="timeWasters" placeholder="Where are you losing time each week?"></textarea>
-  <input max="10" min="1" name="urgencyLevel" placeholder="Urgency (1-10)" type="number" />
+  <textarea name="timeWasters" placeholder="Where are you losing time each week?" required></textarea>
+  <input max="10" min="1" name="urgencyLevel" placeholder="Urgency (1-10)" required type="number" />
 
   <!-- CRM Experience -->
-  <select name="crmExperience">
+  <select name="crmExperience" required>
     <option value="">Do you have CRM experience?</option>
     <option value="yes">Yes</option>
     <option value="no">No</option>
@@ -28,8 +29,8 @@
   <textarea name="crmDetails" placeholder="Tell us about your current CRM"></textarea>
 
   <!-- Goals & Timeline -->
-  <textarea name="successMetrics" placeholder="What does success look like for you?"></textarea>
-  <input name="timeline" placeholder="Timeline" type="text" />
+  <textarea name="successMetrics" placeholder="What does success look like for you?" required></textarea>
+  <input name="timeline" placeholder="Timeline" required type="text" />
   <textarea name="additionalNotes" placeholder="Additional Notes"></textarea>
 
   <button type="submit">Submit</button>
@@ -52,19 +53,18 @@
   <input name="monthlyRevenue" placeholder="Monthly Revenue" type="number" />
 
   <!-- Business Needs -->
-  <textarea name="painPoints" placeholder="What are your pain points?"></textarea>
-  <textarea name="automationNeeds" placeholder="Automation needs"></textarea>
-  <textarea name="leadTracking" placeholder="How do you track leads?"></textarea>
+  <textarea name="painPoints" placeholder="What are your pain points?" required></textarea>
+  <textarea name="automationNeeds" placeholder="Automation needs" required></textarea>
+  <textarea name="leadTracking" placeholder="How do you track leads?" required></textarea>
 
   <!-- Goals & Timeline -->
-  <textarea name="successMetrics" placeholder="What does success look like for you?"></textarea>
-  <input name="timeline" placeholder="Timeline" type="text" />
-  <input name="budget" placeholder="Budget" type="number" />
+  <textarea name="successMetrics" placeholder="What does success look like for you?" required></textarea>
+  <input name="timeline" placeholder="Timeline" required type="text" />
+  <input name="budget" placeholder="Budget" required type="number" />
   <textarea name="additionalNotes" placeholder="Additional Notes"></textarea>
 
   <button type="submit">Submit</button>
 </form>
-
 
 <form data-netlify="true" method="POST" name="custom-package">
   <input name="form-name" type="hidden" value="custom-package" />
@@ -83,17 +83,15 @@
   <input name="monthlyRevenue" placeholder="Monthly Revenue" type="number" />
 
   <!-- Enterprise Requirements -->
-  <textarea name="painPoints" placeholder="What are your pain points?"></textarea>
+  <textarea name="painPoints" placeholder="What are your pain points?" required></textarea>
   <textarea name="aiTools" placeholder="AI tools you use"></textarea>
   <textarea name="compliance" placeholder="Compliance requirements"></textarea>
 
   <!-- Goals & Investment -->
-  <textarea name="idealScenario" placeholder="Describe your ideal scenario"></textarea>
-  <input name="timeline" placeholder="Timeline" type="text" />
-  <input name="budget" placeholder="Budget" type="number" />
+  <textarea name="idealScenario" placeholder="Describe your ideal scenario" required></textarea>
+  <input name="timeline" placeholder="Timeline" required type="text" />
+  <input name="budget" placeholder="Budget" required type="number" />
   <textarea name="additionalNotes" placeholder="Additional Notes"></textarea>
 
   <button type="submit">Submit</button>
 </form>
-
-

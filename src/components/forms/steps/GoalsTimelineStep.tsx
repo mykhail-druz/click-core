@@ -6,8 +6,15 @@ interface GoalsTimelineStepProps {
   updateData: (data: any) => void;
 }
 
-export default function GoalsTimelineStep({ data, updateData }: GoalsTimelineStepProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+export default function GoalsTimelineStep({
+  data,
+  updateData,
+}: GoalsTimelineStepProps) {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     updateData({ [e.target.name]: e.target.value });
   };
 
@@ -33,7 +40,7 @@ export default function GoalsTimelineStep({ data, updateData }: GoalsTimelineSte
           { value: '', label: 'Select your preferred timeline' },
           { value: 'asap', label: 'ASAP - Ready to start!' },
           { value: '2-4weeks', label: 'Next 2-4 weeks' },
-          { value: '1-2months', label: 'Within 1-2 months' }
+          { value: '1-2months', label: 'Within 1-2 months' },
         ]}
       />
 

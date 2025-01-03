@@ -1,7 +1,7 @@
 import React from 'react';
 import MultiStepForm from '../../components/forms/MultiStepForm';
-import {basicFormSteps} from '../../constants/formSteps';
-import {basicFormData} from '../../constants/formData';
+import { basicFormSteps } from '../../constants/formSteps';
+import { basicFormData } from '../../constants/formData';
 
 export default function BasicPackageForm() {
   const handleSubmit = async (data: any) => {
@@ -11,8 +11,8 @@ export default function BasicPackageForm() {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
           'form-name': 'basic-package',
-          ...data
-        }).toString()
+          ...data,
+        }).toString(),
       });
 
       if (response.ok) {
@@ -34,7 +34,7 @@ export default function BasicPackageForm() {
           <p className="mt-4 text-lg text-gray-600 mb-8">
             Get started with our Basic Package for $2,000
           </p>
-          
+
           <MultiStepForm
             steps={basicFormSteps}
             initialData={basicFormData}

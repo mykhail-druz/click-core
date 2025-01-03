@@ -6,6 +6,7 @@ export interface FormStep {
     data: FormData;
     updateData: (data: FormData) => void;
   }>;
+  validation?: (data: Record<string, any>) => boolean;
 }
 
 

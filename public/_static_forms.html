@@ -1,3 +1,4 @@
+<!-- Basic Package Form -->
 <form data-netlify="true" method="POST" name="basic-package">
   <input name="form-name" type="hidden" value="basic-package" />
 
@@ -36,6 +37,7 @@
   <button type="submit">Submit</button>
 </form>
 
+<!-- High-Ticket Package Form -->
 <form data-netlify="true" method="POST" name="high-ticket-package">
   <input name="form-name" type="hidden" value="high-ticket-package" />
 
@@ -44,53 +46,70 @@
   <input name="businessName" placeholder="Business Name" required type="text" />
   <input name="email" placeholder="Your Email" required type="email" />
   <input name="phone" placeholder="Phone Number" type="tel" />
-  <input name="website" placeholder="Website" type="url" />
 
-  <!-- Tech Stack -->
-  <textarea name="currentCRM" placeholder="Describe your current CRM"></textarea>
-  <textarea name="otherTools" placeholder="Other tools you use"></textarea>
-  <input name="teamSize" placeholder="Team Size" type="number" />
-  <input name="monthlyRevenue" placeholder="Monthly Revenue" type="number" />
+  <!-- Sales Process -->
+  <textarea name="currentProcess" placeholder="Describe your current sales process" required></textarea>
+  <select name="biggestFrustration" required>
+    <option value="">Select your biggest frustration</option>
+    <option value="losing_leads">Losing leads</option>
+    <option value="inconsistent_followup">Inconsistent follow-up</option>
+    <option value="no_crm">No CRM at all</option>
+    <option value="messy_process">Messy process</option>
+    <option value="other">Other</option>
+  </select>
+  <textarea name="timeWasters" placeholder="Where are you losing time each week?" required></textarea>
+  <input max="10" min="1" name="urgencyLevel" placeholder="Urgency (1-10)" required type="number" />
 
-  <!-- Business Needs -->
-  <textarea name="painPoints" placeholder="What are your pain points?" required></textarea>
-  <textarea name="automationNeeds" placeholder="Automation needs" required></textarea>
-  <textarea name="leadTracking" placeholder="How do you track leads?" required></textarea>
+  <!-- CRM Experience -->
+  <select name="crmExperience" required>
+    <option value="">Do you have CRM experience?</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <textarea name="crmDetails" placeholder="Tell us about your current CRM"></textarea>
 
   <!-- Goals & Timeline -->
   <textarea name="successMetrics" placeholder="What does success look like for you?" required></textarea>
   <input name="timeline" placeholder="Timeline" required type="text" />
-  <input name="budget" placeholder="Budget" required type="number" />
   <textarea name="additionalNotes" placeholder="Additional Notes"></textarea>
 
   <button type="submit">Submit</button>
 </form>
 
+<!-- Custom Package Form -->
 <form data-netlify="true" method="POST" name="custom-package">
   <input name="form-name" type="hidden" value="custom-package" />
 
   <!-- Contact Details -->
   <input name="name" placeholder="Your Name" required type="text" />
-  <input name="position" placeholder="Your Position" required type="text" />
   <input name="businessName" placeholder="Business Name" required type="text" />
   <input name="email" placeholder="Your Email" required type="email" />
   <input name="phone" placeholder="Phone Number" type="tel" />
-  <input name="website" placeholder="Website" type="url" />
 
-  <!-- Tech Stack -->
-  <textarea name="techStack" placeholder="Describe your tech stack"></textarea>
-  <textarea name="departments" placeholder="Departments involved"></textarea>
-  <input name="monthlyRevenue" placeholder="Monthly Revenue" type="number" />
+  <!-- Sales Process -->
+  <textarea name="currentProcess" placeholder="Describe your current sales process" required></textarea>
+  <select name="biggestFrustration" required>
+    <option value="">Select your biggest frustration</option>
+    <option value="losing_leads">Losing leads</option>
+    <option value="inconsistent_followup">Inconsistent follow-up</option>
+    <option value="no_crm">No CRM at all</option>
+    <option value="messy_process">Messy process</option>
+    <option value="other">Other</option>
+  </select>
+  <textarea name="timeWasters" placeholder="Where are you losing time each week?" required></textarea>
+  <input max="10" min="1" name="urgencyLevel" placeholder="Urgency (1-10)" required type="number" />
 
-  <!-- Enterprise Requirements -->
-  <textarea name="painPoints" placeholder="What are your pain points?" required></textarea>
-  <textarea name="aiTools" placeholder="AI tools you use"></textarea>
-  <textarea name="compliance" placeholder="Compliance requirements"></textarea>
+  <!-- CRM Experience -->
+  <select name="crmExperience" required>
+    <option value="">Do you have CRM experience?</option>
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+  <textarea name="crmDetails" placeholder="Tell us about your current CRM"></textarea>
 
-  <!-- Goals & Investment -->
-  <textarea name="idealScenario" placeholder="Describe your ideal scenario" required></textarea>
+  <!-- Goals & Timeline -->
+  <textarea name="successMetrics" placeholder="What does success look like for you?" required></textarea>
   <input name="timeline" placeholder="Timeline" required type="text" />
-  <input name="budget" placeholder="Budget" required type="number" />
   <textarea name="additionalNotes" placeholder="Additional Notes"></textarea>
 
   <button type="submit">Submit</button>

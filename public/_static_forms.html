@@ -114,3 +114,19 @@
 
   <button type="submit">Submit</button>
 </form>
+
+<!-- Contact Us Form -->
+<form data-netlify="true" method="POST" name="contact">
+  <input name="form-name" type="hidden" value="contact" />
+
+  <input name="name" placeholder="Name" required type="text" />
+  <input name="email" placeholder="Email" required type="email" />
+  <input name="company" placeholder="Company" required type="text" />
+  <select name="package" required>
+    <option value="">Select a package</option>
+    <option value="basic">Basic Package - $2,000</option>
+    <option value="high-ticket">High Ticket Package - $5,000</option>
+    <option value="custom">To-The-Moon Package - Custom Quote</option>
+  </select>
+  <textarea name="message" placeholder="Message" required></textarea>
+</form>

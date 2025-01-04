@@ -28,18 +28,7 @@ export default function MultiStepForm({
   const navigate = useNavigate();
 
   const updateData = (newData: any) => {
-    const updatedFormData = { ...formData };
-
-    Object.entries(newData).forEach(([key, value]) => {
-      if (Array.isArray(value)) {
-        updatedFormData[key] = Array.from(
-          new Set([...(formData[key] || []), ...value])
-        );
-      } else {
-        updatedFormData[key] = value;
-      }
-    });
-
+    const updatedFormData = { ...formData, ...newData };
     setFormData(updatedFormData);
   };
 
@@ -73,30 +62,27 @@ export default function MultiStepForm({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.currentTarget;
-    const existingInputs = form.querySelectorAll('input[type="hidden"]');
-    existingInputs.forEach((input) => form.removeChild(input));
+    const cleanedData = Object.fromEntries(
+      Object.entries(formData).map(([key, value]) => [
+        key,
+        Array.isArray(value) ? value[0] : value,
+      ])
+    );
 
-    Object.entries(formData).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = Array.isArray(value) ? value[0] : value?.toString() || '';
-      form.appendChild(input);
-    });
+    console.log('Final cleaned data:', cleanedData);
 
-    form.submit();
+    e.currentTarget.submit();
   };
 
   const CurrentStepComponent = steps[currentStep].component;
 
   // Preprocess formData to ensure uniqueness before rendering hidden inputs
-  // const uniqueFormData = Object.fromEntries(
-  //   Object.entries(formData).map(([key, value]) => [
-  //     key,
-  //     Array.isArray(value) ? value[0] : value,
-  //   ])
-  // );
+  const uniqueFormData = Object.fromEntries(
+    Object.entries(formData).map(([key, value]) => [
+      key,
+      Array.isArray(value) ? value[0] : value,
+    ])
+  );
 
   return (
     <form
@@ -112,9 +98,9 @@ export default function MultiStepForm({
       <input type="hidden" name="bot-field" />
 
       {/* Render hidden inputs */}
-      {/*{Object.entries(uniqueFormData).map(([key, value]) => (*/}
-      {/*  <input key={key} type="hidden" name={key} value={value || ''} />*/}
-      {/*))}*/}
+      {Object.entries(uniqueFormData).map(([key, value]) => (
+        <input key={key} type="hidden" name={key} value={value || ''} />
+      ))}
 
       {/* Progress indicator */}
       <div className="mb-8">

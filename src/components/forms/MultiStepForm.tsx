@@ -59,12 +59,37 @@ export default function MultiStepForm({
     }
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const cleanedData = Object.fromEntries(
+      Object.entries(formData).map(([key, value]) => {
+        return [key, Array.isArray(value) ? value[0] : value];
+      })
+    );
+
+    console.log('Final cleaned data:', cleanedData);
+
+    const form = e.currentTarget;
+    Object.entries(cleanedData).forEach(([key, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = value?.toString() || '';
+      form.appendChild(input);
+    });
+
+    form.submit();
+  };
+
   const CurrentStepComponent = steps[currentStep].component;
 
-  const cleanFormData = Object.fromEntries(
-    Object.entries(formData).map(([key, value]) => {
-      return [key, Array.isArray(value) ? value[0] : value];
-    })
+  // Preprocess formData to ensure uniqueness before rendering hidden inputs
+  const uniqueFormData = Object.fromEntries(
+    Object.entries(formData).map(([key, value]) => [
+      key,
+      Array.isArray(value) ? value[0] : value,
+    ])
   );
 
   return (
@@ -75,18 +100,14 @@ export default function MultiStepForm({
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       className="space-y-8"
+      onSubmit={handleSubmit}
     >
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="bot-field" />
 
-      {/* Hidden inputs for all form fields */}
-      {Object.entries(cleanFormData).map(([key, value]) => (
-        <input
-          key={key}
-          type="hidden"
-          name={key}
-          value={value?.toString() || ''}
-        />
+      {/* Render hidden inputs */}
+      {Object.entries(uniqueFormData).map(([key, value]) => (
+        <input key={key} type="hidden" name={key} value={value || ''} />
       ))}
 
       {/* Progress indicator */}

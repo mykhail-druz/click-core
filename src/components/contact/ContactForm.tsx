@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import FormField from './FormField';
 
 export default function ContactForm() {
@@ -8,47 +7,23 @@ export default function ContactForm() {
     email: '',
     company: '',
     package: '',
-    message: ''
+    message: '',
   });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...formData
-        }).toString()
-      });
-
-      if (response.ok) {
-        alert('Thank you for your message. We will get back to you soon!');
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          package: '',
-          message: ''
-        });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('There was an error submitting the form. Please try again.');
-    }
-  };
 
   return (
     <form
       name="contact"
       method="POST"
       data-netlify="true"
-      onSubmit={handleSubmit}
+      onSubmit={() => {
+        alert('Thank you for your message. We will get back to you soon!');
+      }}
       className="space-y-6"
+      action="/"
     >
       <input type="hidden" name="form-name" value="contact" />
-      
+      <input type="hidden" name="bot-field" />
+
       <FormField
         label="Name"
         name="name"
@@ -87,7 +62,7 @@ export default function ContactForm() {
           { value: '', label: 'Select a package' },
           { value: 'basic', label: 'Basic Package - $2,000' },
           { value: 'high-ticket', label: 'High Ticket Package - $5,000' },
-          { value: 'custom', label: 'To-The-Moon Package - Custom Quote' }
+          { value: 'custom', label: 'To-The-Moon Package - Custom Quote' },
         ]}
       />
 

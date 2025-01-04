@@ -69,14 +69,6 @@ export default function MultiStepForm({
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       className="space-y-8"
-      onSubmit={(e) => {
-        if (currentStep < steps.length - 1) {
-          e.preventDefault();
-          alert('Complete all steps before submitting the form.');
-        } else {
-          console.log('Form submitted:', formData);
-        }
-      }}
     >
       <input type="hidden" name="form-name" value={formName} />
       <input type="hidden" name="bot-field" />

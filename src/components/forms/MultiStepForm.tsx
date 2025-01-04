@@ -28,7 +28,18 @@ export default function MultiStepForm({
   const navigate = useNavigate();
 
   const updateData = (newData: any) => {
-    const updatedFormData = { ...formData, ...newData };
+    const updatedFormData = { ...formData };
+
+    Object.entries(newData).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        updatedFormData[key] = Array.from(
+          new Set([...(formData[key] || []), ...value])
+        );
+      } else {
+        updatedFormData[key] = value;
+      }
+    });
+
     setFormData(updatedFormData);
   };
 

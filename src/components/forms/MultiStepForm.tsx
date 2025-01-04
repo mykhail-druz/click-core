@@ -88,12 +88,12 @@ export default function MultiStepForm({
   const CurrentStepComponent = steps[currentStep].component;
 
   // Preprocess formData to ensure uniqueness before rendering hidden inputs
-  const uniqueFormData = Object.fromEntries(
-    Object.entries(formData).map(([key, value]) => [
-      key,
-      Array.isArray(value) ? value[0] : value,
-    ])
-  );
+  // const uniqueFormData = Object.fromEntries(
+  //   Object.entries(formData).map(([key, value]) => [
+  //     key,
+  //     Array.isArray(value) ? value[0] : value,
+  //   ])
+  // );
 
   return (
     <form
@@ -109,9 +109,9 @@ export default function MultiStepForm({
       <input type="hidden" name="bot-field" />
 
       {/* Render hidden inputs */}
-      {Object.entries(uniqueFormData).map(([key, value]) => (
-        <input key={key} type="hidden" name={key} value={value || ''} />
-      ))}
+      {/*{Object.entries(uniqueFormData).map(([key, value]) => (*/}
+      {/*  <input key={key} type="hidden" name={key} value={value || ''} />*/}
+      {/*))}*/}
 
       {/* Progress indicator */}
       <div className="mb-8">

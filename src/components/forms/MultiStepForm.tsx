@@ -73,16 +73,19 @@ export default function MultiStepForm({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const cleanedData = Object.fromEntries(
-      Object.entries(formData).map(([key, value]) => [
-        key,
-        Array.isArray(value) ? value[0] : value,
-      ])
-    );
+    const form = e.currentTarget;
+    const existingInputs = form.querySelectorAll('input[type="hidden"]');
+    existingInputs.forEach((input) => form.removeChild(input));
 
-    console.log('Final cleaned data:', cleanedData);
+    Object.entries(formData).forEach(([key, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = Array.isArray(value) ? value[0] : value?.toString() || '';
+      form.appendChild(input);
+    });
 
-    e.currentTarget.submit();
+    form.submit();
   };
 
   const CurrentStepComponent = steps[currentStep].component;

@@ -61,6 +61,12 @@ export default function MultiStepForm({
 
   const CurrentStepComponent = steps[currentStep].component;
 
+  const cleanFormData = Object.fromEntries(
+    Object.entries(formData).map(([key, value]) => {
+      return [key, Array.isArray(value) ? value[0] : value];
+    })
+  );
+
   return (
     <form
       name={formName}
@@ -74,7 +80,7 @@ export default function MultiStepForm({
       <input type="hidden" name="bot-field" />
 
       {/* Hidden inputs for all form fields */}
-      {Object.entries(formData).map(([key, value]) => (
+      {Object.entries(cleanFormData).map(([key, value]) => (
         <input
           key={key}
           type="hidden"

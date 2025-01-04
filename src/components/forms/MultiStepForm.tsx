@@ -63,23 +63,15 @@ export default function MultiStepForm({
     e.preventDefault();
 
     const cleanedData = Object.fromEntries(
-      Object.entries(formData).map(([key, value]) => {
-        return [key, Array.isArray(value) ? value[0] : value];
-      })
+      Object.entries(formData).map(([key, value]) => [
+        key,
+        Array.isArray(value) ? value[0] : value,
+      ])
     );
 
     console.log('Final cleaned data:', cleanedData);
 
-    const form = e.currentTarget;
-    Object.entries(cleanedData).forEach(([key, value]) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = value?.toString() || '';
-      form.appendChild(input);
-    });
-
-    form.submit();
+    e.currentTarget.submit();
   };
 
   const CurrentStepComponent = steps[currentStep].component;
